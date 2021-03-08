@@ -1,0 +1,40 @@
+@font-face {
+  font-family: IntroCondBlackFree;
+  src: url("./fonts/Intro Cond Black Free.otf") format("opentype");
+}
+
+@font-face {
+  font-family: IntroCondLightFree;
+  src: url("./fonts/Intro Cond Light Free.otf") format("opentype");
+}
+
+#searchButton {
+	box-shadow:inset 0px -3px 7px 0px #b0c9d4;
+	background-color:#4ba3d6;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial Black;
+	font-size:18px;
+	margin-top: 20px;
+	margin-left: 45%;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+#searchButton:hover {
+	background-color:#87bce8;
+}
+
+#searchButton:active {
+	background-color: blue;
+}
+
+#predictedText a:link {
+  color: purple;
+}
+
+*[data-dash-is-loading="true"]{
+    visibility: visible;
+}

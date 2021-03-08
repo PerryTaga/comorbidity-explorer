@@ -1,0 +1,9 @@
+plotly==4.10.0
+dash==1.16.0
+pandas==1.0.4
+torch==1.5.0
+transformers==3.4.0
+datasets==1.1.2
+googlesearch-python==2020.0.2
+dash-bootstrap-components==0.10.7
+gunicorn
