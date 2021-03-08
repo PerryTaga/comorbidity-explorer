@@ -70,6 +70,6 @@ your dataset and use case. Training parameters can also be adjusted, as needed.
 You can use this prediction function to verify that your trained model is working decently, by giving it novel input sentences to run predictions on.
 
 It bears mentioning that the BERT model and its derivatives are large, and intended for equally large datasets. The results of this application deployment are certainly acceptable, given a dataset size of about 20MB (trained in about an hour for three epochs).
-![AI training](./images/synthBERT_training.png)
+![AI training](./assets/images/synthBERT_training.png)
 Typically, however, BERT benefits from datasets on the order of GB. You may wish to consider you hardware setup before embarking on such a quest.
 
