@@ -72,7 +72,7 @@ pageLoadingFig = generate_loading_graph(pageLoadingData)
 # ------------------------- ------------------------------------------------------ -------------------------
 
 
-# setup hover info text
+# ----------------------------------------- setup hover info text ------------------------------------------
 tooltip = html.Div(
     [
         html.Div(id = "tooltip-target", children =
@@ -90,8 +90,10 @@ tooltip = html.Div(
         html.P(["HOW DOES", html.Br(), "THIS WORK?"], style={"float":"left", "marginLeft":"50px", "text-align":"center", "font-family":"IntroCondBlackFree", "fontSize":"22px"})
     ]
 )
+# ----------------------------------------- -------------------- ------------------------------------------
 
-# layout the webpage
+
+# --------------------------- layout the webpage ------------------------
 app.layout = html.Div(children = 
                         [html.Div("Comorbidity Explorer", style={
                                                 "color":"black",
@@ -132,6 +134,7 @@ app.layout = html.Div(children =
                         dcc.Loading(id="dataGraphLoading", children=[dcc.Graph(id = 'myGraph', figure = [])], type="default"),
                         html.Div("condition", style={'text-align':'center', 'font-family':'Verdana'})
                       ], style={'backgroundColor':'#fff5bf'})
+# ------------------------------------------------------------------------
 
 
 ### callback buttons ###
@@ -219,10 +222,10 @@ def update_prediction_graph(input_condition1, input_condition2, input_condition3
     global tokenizer
     global model
     global fill_mask
-     
+
+    # only initialize the model once 
     if(tokenizer == None):
         # load the pretrained model
-        print("MADE IT")
         tokenizer = BertTokenizer(VOCAB_PATH, do_basic_tokenize=True, additional_special_tokens=vocab)
         model = BertForMaskedLM.from_pretrained(MODEL_FOLDER)
 
@@ -241,7 +244,7 @@ def update_prediction_graph(input_condition1, input_condition2, input_condition3
             input_prediction_string += input_cond + " "
 
     if input_prediction_string == "":
-        # no conditions input
+        # no conditions input, return blank figure
         return ""
     else:
 
@@ -276,8 +279,8 @@ def update_prediction_graph(input_condition1, input_condition2, input_condition3
 
         return fig, html.P(output_prediction_html)
 
-
 ###         ###
+
 
 # input validation
 def reduce_conditions(condition_1, condition_2 = None, condition_3 = None, condition_4 = None, condition_5 = None):
