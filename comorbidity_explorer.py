@@ -279,7 +279,7 @@ def update_prediction_graph(input_condition1, input_condition2, input_condition3
 
         return fig, html.P(output_prediction_html)
 
-###         ###
+###    --    ###
 
 
 # input validation
